@@ -5,7 +5,7 @@ import Layout from "./components/layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Detail from "./pages/Contact"
+import Detail from "./pages/DetailProduct"
 
 export default function App() {
   return (
