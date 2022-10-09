@@ -16,7 +16,7 @@ export default function App() {
           {/* <Route path="page1" element={<Page1 />} /> */}
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
-          <Route path="detail/:id" element={<Detail />} />
+          <Route path="detail/:key" element={<Detail />} />
         </Route>
       </Routes>
     </BrowserRouter>

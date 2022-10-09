@@ -1,14 +1,15 @@
-import { Input, Space, Table, Tag, Button } from "antd";
+import { Input, Table, Button } from "antd";
 import React, { useState } from "react";
 import data from "../data.json";
-import {Link} from "react-router-dom"
-const { Column, ColumnGroup } = Table;
+import { Link } from "react-router-dom";
+
+const { Column, } = Table;
 const App = () => {
   const [listData, setListData] = useState(data);
 
   const handleSearch = (value) => {
     const filterData = listData.filter((e) =>
-      e.title.toLowerCase().includes(value.toLowerCase())
+      e.name.toLowerCase().includes(value.toLowerCase())
     );
     setListData(filterData);
   };
@@ -26,15 +27,15 @@ const App = () => {
       />
       <Button onClick={refreshData}>refresh</Button>
       <Table dataSource={listData}>
-        <Column title="First Name" dataIndex="userId" key="id" />
-        <Column title="Age" dataIndex="id" key="id" />
-        <Column title="Address" dataIndex="title" key="id" />
+        <Column title="Id" dataIndex="recipe_id" key="recipe_id" />
+        <Column title="Menu" dataIndex="name" key="recipe_id" />
+        <Column title="Category" dataIndex="category" key="recipe_id" />
         <Column
           title="Detail"
-          dataIndex="id"
-          key="id"
-          render={(id) => (
-            <Link to={`/detail/${id}`}>
+          dataIndex="recipe_id"
+          key="recipe_id"
+          render={(key) => (
+            <Link to={`/detail/${key}`}>
               <Button className="button" type="primary">
                 See Detail
               </Button>
